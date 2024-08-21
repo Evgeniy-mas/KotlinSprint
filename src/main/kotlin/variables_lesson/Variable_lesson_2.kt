@@ -9,14 +9,6 @@ fun main() {
 
     var workersShop = 2000
    // println("Всего работников в магазине $workersShop.")
-
     workersShop = 1999
     println("Всего работников в магазине $workersShop.")
-
-
-
-
-
-
-
 }
