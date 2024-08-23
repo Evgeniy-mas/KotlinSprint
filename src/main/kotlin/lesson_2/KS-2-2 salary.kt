@@ -1,9 +1,16 @@
 package org.example.lesson_2
 
 fun main() {
-    val constWorkerExpenses = 50 * 30000
-    val newExpenses = 30 * 20000 + constWorkerExpenses
-    val averageSalary = newExpenses / 80
+    val constWorker = 50
+    val salaryConstWorker = 30000
+
+    val newWorker = 30
+    val salaryNewWorker = 20000
+
+    val constWorkerExpenses = constWorker * salaryConstWorker
+    val newExpenses = newWorker * salaryNewWorker + constWorkerExpenses
+    val allWorker = constWorker + newWorker
+    val averageSalary = newExpenses / allWorker
 
     println(constWorkerExpenses)
     println(newExpenses)
