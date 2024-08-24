@@ -1,21 +1,20 @@
 package org.example.lesson_4
 
 fun main() {
-    val averageWeightMin = 35
-    val averageWeightMax = 100
-    val averageVolume = 100
-
     val cargoWeight = 20
     val cargoVolume = 80
 
     val cargoWeight2 = 50
     val cargoVolume2 = 100
 
-    println("${(cargoWeight > averageWeightMin) &&
-            (cargoWeight <= averageWeightMax) 
-           && (cargoVolume < averageVolume)}")
+    println("${(cargoWeight > AVERAGE_WEIGHT_MIN) &&
+            (cargoWeight <= AVERAGE_WEIGHT_MAX) &&
+            (cargoVolume < AVERAGE_VOLUME)}")
 
-    println("${(cargoWeight2 > averageWeightMin) &&
-            (cargoWeight2 <= averageWeightMax)
-            && (cargoVolume2 < averageVolume)}")
+    println("${(cargoWeight2 > AVERAGE_WEIGHT_MIN) &&
+            (cargoWeight2 <= AVERAGE_WEIGHT_MAX) &&
+            (cargoVolume2 < AVERAGE_VOLUME)}")
 }
+const val AVERAGE_WEIGHT_MIN = 35
+const val AVERAGE_WEIGHT_MAX = 100
+const val AVERAGE_VOLUME = 100
