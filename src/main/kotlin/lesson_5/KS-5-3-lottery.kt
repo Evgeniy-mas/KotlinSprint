@@ -4,7 +4,7 @@ fun main() {
     val firsNumber = 0..42
     val secondNumber = 0..42
 
-    println("Угадайте два числа от 0 до 42")
+    println("Угадайте два числа!")
     println("Введите первое число:")
 
     val first = readln().toInt()
@@ -22,9 +22,5 @@ fun main() {
     else {
         println("Неудача!")
     }
-
-    println("Для победы нужно было угадать числа:")
-    for (i in firsNumber) {
-        print("$i ")
-    }
+    println("Для победы нужно было угадать два числа от 0 до 42!")
 }
