@@ -1,13 +1,15 @@
 package org.example.lesson_3
 
 fun main() {
-    val serv = "D2-D4;0"
+    val server = "D2-D4;0"
 
-    val whereFrom = serv.subSequence(0,2)
-    val where = serv.subSequence(3,5)
-    val moveNumber = serv.subSequence(6,7)
+    val serverSplit:List<String> = server.split('-',';')
 
-    print(whereFrom)
-    print(where)
-    print(moveNumber)
+    val whereFrom = serverSplit[0]
+    val where = serverSplit[1]
+    val moveNumber = serverSplit[2]
+
+    println(whereFrom)
+    println(where)
+    println(moveNumber)
 }
