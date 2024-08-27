@@ -19,16 +19,11 @@ fun main() {
     val check2 = random2.intersect(secondNumber).size
     val check3 = random3.intersect((thirdNumber)).size
 
-    if(check == 1 && check2 == 1 && check3 == 1) {
-        println("Вы выйграли джекпот!")
+    when {
+        check and check2 and check3 == 1 -> println("Вы выйрали джекпот!")
+        check and check2 == 1 || check2 and check3 == 1 || check and check3 == 1 -> println("Вы выиграли крупный приз")
+        check == 1 || check2 == 1 || check3 == 1 -> println("Вы получаете утешительный приз")
+        else -> println("Вы не угадали ни одного числа")
     }
-    else if(check == 1 && check2 == 1 || check == 1 && check3 == 1 || check2 == 1 && check3 == 1) {
-        println("Вы угадали два числа и получаете крупный приз!")
-    }
-    else if(check == 1 || check2 == 1 || check3 == 1) {
-        println("Вы получаете утешительный приз!")
-    }
-    else println("Вы не угадали ни одного числа")
-
-    println("Выигрышные числа: ${random[0]},${random2[0]},${random3[0]}  ")
+    println("Выигрышные числа: ${random[0]},${random2[0]},${random3[0]}")
 }
