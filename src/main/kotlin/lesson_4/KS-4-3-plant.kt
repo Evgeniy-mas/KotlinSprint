@@ -9,11 +9,11 @@ fun main () {
     val conditions = weatherSun == SUN_WEATHER &&
             tentIsOpen == OPEN_TENT &&
             humiDity == HUMIDITY &&
-            season == SEASON_NEED
+            season !== SEASON_NOT_NEED
 
     println("Благоприятны ли условия сейчас для роста бобовых: $conditions")
 }
 const val SUN_WEATHER = true
 const val OPEN_TENT = true
 const val HUMIDITY = 20
-const val SEASON_NEED = "not winter"
+const val SEASON_NOT_NEED = "winter"
