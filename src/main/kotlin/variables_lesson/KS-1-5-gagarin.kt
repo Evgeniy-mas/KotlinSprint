@@ -1,14 +1,15 @@
 package org.example.variables_lesson
 
 fun main() {
-    val hour = SECOND / SEC_IN_HOUR
+    val second = 6480
+    val secInMinute = 60
+    val secInHour = 3600
 
-    val minute = (SECOND % SEC_IN_HOUR) / SEC_IN_MINUTE
+    val hours = second / secInHour
 
-    val second = SECOND % SEC_IN_MINUTE
+    val minutes = (second % secInHour) / secInMinute
 
-    println("Время в космосе: ${String.format("%02d",hour )}:$minute:${String.format("%02d",second)}")
+    val seconds = second % secInMinute
+
+    println("Время в космосе: %02d:%02d:%02d".format(hours, minutes, seconds))
 }
-const val SECOND =  6480
-const val SEC_IN_MINUTE = 60
-const val SEC_IN_HOUR = 3600
