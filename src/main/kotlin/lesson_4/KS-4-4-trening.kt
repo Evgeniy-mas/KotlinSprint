@@ -1,14 +1,11 @@
 package org.example.lesson_4
 
 fun main() {
-    val dayWorkout = 5
+    val day = 5
+    val isEver:Boolean = day % 2 == 0
 
-    val parityNumber = dayWorkout % 2
-
-    println("Упражнения для рук: ${HAND_AND_PRESS == parityNumber}\n" +
-            "Упражнения для ног: ${LEGS_AND_BACK == parityNumber}\n" +
-            "Упражнения для спины: ${LEGS_AND_BACK == parityNumber}\n" +
-            "Упражнения для пресса: ${HAND_AND_PRESS == parityNumber}\n")
+    println("Упражнения для рук: ${!isEver}")
+    println("Упражнени для ног: ${isEver}")
+    println("Упражнения для спины: ${isEver}")
+    println("Упражнения для пресса: ${!isEver}")
 }
-const val HAND_AND_PRESS = 1
-const val LEGS_AND_BACK = 0
