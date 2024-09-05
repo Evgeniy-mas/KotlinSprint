@@ -1,15 +1,13 @@
 package org.example.lesson_6
 
-fun main() {
+import java.util.concurrent.TimeUnit
 
+fun main() {
     println("Введите количество секунд, которые нужно засечь:")
 
-    val timer = readln().toInt()
-    var second = 0
+    val timer = readln().toLong()
+    TimeUnit.SECONDS.sleep(timer)
 
-    while (second < timer) {
-        second++
-        Thread.sleep(1000)
-    }
     println("Прошло $timer секунд.")
 }
+
