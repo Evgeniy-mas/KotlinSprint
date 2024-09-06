@@ -1,33 +1,36 @@
 package org.example.lesson_4
 
 fun main() {
-    val team = 55..70
-    val shipDamage: Boolean
-    val provisions = 50
-    val weather:Boolean
-
     val teamAlternative = 70
-    val weather2 = true
-    val provisions2 = 50
+    val IsWeatherAlternative = true
+    val provisionsAlternative = 50
 
-    println("Введите наличие повреждения корпуса: 1-да, 2-нет")
-    val damageShip = readln()
-    shipDamage = damageShip == "2"
+    println("Введите наличие повреждения корпуса: true(Да) или false(Нет):")
+    val damageShip = readln().toBoolean()
 
     println("Введите количество экипажа корабля")
     val crew = readln().toInt()
 
     println("Введите количество ящиков провизии")
-    val y = readln().toInt()
+    val boxProvisions = readln().toInt()
 
-    println("Благоприятны ли метеоусловия: 1-Да, 2-Нет")
-    val weatherConditions = readln()
-    weather = weatherConditions == "1"
+    println("Благоприятны ли метеоусловия: true(Да) или false(Нет)")
+    val weatherConditions = readln().toBoolean()
 
-    val result = shipDamage && crew in team && y > provisions &&
-            weather || !shipDamage && crew == teamAlternative &&
-            y >= provisions2 && weather2
+    val result = (damageShip == IS_SHIP_DAMAGE) &&
+            (crew >= TEAM_MIN) && (crew <= TEAM_MAX) &&
+            (boxProvisions > PROVISIONS) &&
+            (weatherConditions == IS_WEATHER) ||
+            (damageShip != IS_SHIP_DAMAGE) && (crew == teamAlternative) &&
+            (boxProvisions >= provisionsAlternative) &&
+            (IsWeatherAlternative == IS_WEATHER)
 
     println("Корабль может приступить к плаванию: $result")
 }
+const val TEAM_MIN = 55
+const val TEAM_MAX = 70
+const val PROVISIONS = 50
+const val IS_SHIP_DAMAGE = false
+const val IS_WEATHER = true
+
 
