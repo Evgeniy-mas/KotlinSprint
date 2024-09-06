@@ -5,9 +5,7 @@ fun main() {
 
     val userNumber = readln().toInt()
 
-    for (i in 0..userNumber) {
-        if(i  %  2 == 0) {
-            println(i)
-        }
+    for (i in 0..userNumber step 2) {
+        println(i)
     }
 }
