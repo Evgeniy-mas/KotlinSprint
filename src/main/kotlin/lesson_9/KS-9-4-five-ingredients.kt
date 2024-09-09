@@ -5,7 +5,7 @@ fun main() {
 
     val userEnter = readln().split(", ").toList()
 
-    val newList = userEnter.sorted()
+    val newSortList = userEnter.sorted()
 
-    println(newList)
+    println(newSortList)
 }
