@@ -3,12 +3,12 @@ package org.example.lesson_10
 fun main() {
     println("Игрок делает свой ход:")
 
-    val gamer = getMove()
+    val gamer = rollDice()
     println("Результат игрока: $gamer")
 
     println("Компьютер делает свой ход:")
 
-    val computer = getMove()
+    val computer = rollDice()
     println("Результат машины: $computer")
 
     if (gamer > computer) {
@@ -17,7 +17,7 @@ fun main() {
     else println("Ничья!")
 }
 
-fun getMove(): Int = (1..6).random()
+fun rollDice(): Int = (1..6).random()
 
 
 
