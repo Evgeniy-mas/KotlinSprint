@@ -13,15 +13,12 @@ fun main() {
 
     if (gamer > computer) {
         println("Победило человечество!")
-    }
-
-    else if(gamer < computer) println("Победила машина!")
+    } else if (gamer < computer) println("Победила машина!")
     else println("Ничья!")
 }
 
-fun getMove():Int {
+fun getMove(): Int = (1..6).random()
 
-    val random = (1..6).random()
 
-    return random
-}
+
+
