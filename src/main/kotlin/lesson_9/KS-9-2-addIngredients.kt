@@ -10,10 +10,10 @@ fun main() {
 
     val question = readln()
 
-    if(question == "нет") {
+    if(question.equals("нет",ignoreCase = true)) {
         return
     }
-    else if(question == "да") {
+    else if(question.equals("да",ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
     }
 
