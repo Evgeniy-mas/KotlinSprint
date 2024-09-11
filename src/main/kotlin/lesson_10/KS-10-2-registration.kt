@@ -10,14 +10,11 @@ fun main() {
 
     val password = readln()
 
-    getCheck(login,password)
-}
-
-fun getCheck(name:String, pass:String) {
-    val passwordMin = 4
-
-    if (name.length < passwordMin || pass.length < passwordMin) {
-        println("Логин или пароль недостаточно длинные!")
+    if (getCheck(login, password) == true) {
+        println("Вход выполнен!")
+    } else {
+        println("Пароль или логин недостаточно длинные.")
     }
-    else println("Вход выполнен!")
 }
+
+fun getCheck(name: String, pass: String): Boolean = name.length >= 4 && pass.length >= 4
