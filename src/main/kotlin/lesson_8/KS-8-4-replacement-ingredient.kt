@@ -10,17 +10,15 @@ fun main() {
 
     val userReplacement = readln()
 
-    if(userReplacement in ingredients) {
-        println("Какой ингредиент вы хотите добавить?")
-    }
-    else{
+    if (userReplacement !in ingredients) {
         println("Такого ингредиента нет.")
-        return
     }
+
+    println("Какой ингредиент вы хотите добавить?")
 
     val addIngredient = readln()
 
     ingredients.set(ingredients.indexOf(userReplacement), addIngredient)
 
-    println("Готово! Вы сохранили следующий список: ${ingredients.joinToString (",")}.")
+    println("Готово! Вы сохранили следующий список: ${ingredients.joinToString(",")}.")
 }
