@@ -1,8 +1,8 @@
 package org.example.lesson_11
 
 fun main() {
-    val user = DataUser(11234,"user", 1999456,"user1@yandex.ru",)
-    val user2 = DataUser(34234,"user2",1324324,"user2@gmail.com",)
+    val user = DataUser(11234, "user", 1999456, "user1@yandex.ru")
+    val user2 = DataUser(34234, "user2", 1324324, "user2@gmail.com")
 
     println(user.id)
     println(user.login)
@@ -21,5 +21,5 @@ class DataUser(
     val id: Int,
     val login: String,
     val password: Int,
-    val mail:String,
+    val mail: String,
 ) {}
