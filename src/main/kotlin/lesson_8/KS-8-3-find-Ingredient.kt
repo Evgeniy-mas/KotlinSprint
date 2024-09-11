@@ -5,14 +5,10 @@ fun main() {
 
     println("Какой ингредиент вы хотите найти?")
 
-    val search = readln()
-
-    if (search in ingredients) {
+    if (readln() in ingredients) {
         println("Ингредиент в рецепте есть.")
         return
-    }
-
-    else {
+    } else {
         println("Такого ингредиента в рецепте нет.")
     }
 }
