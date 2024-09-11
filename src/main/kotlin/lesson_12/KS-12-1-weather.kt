@@ -1,7 +1,7 @@
 package org.example.lesson_12
 
 fun main() {
-    val sunday = Weather()
+    val sunday = NewClass()
 
     sunday.dayTimeTemp = "20"
     sunday.dayNightTemp = "15"
@@ -12,7 +12,7 @@ fun main() {
     sunday.seeInSky = "Луна"
     sunday.number = 55
 
-    val monday = Weather()
+    val monday = NewClass()
 
     monday.dayTimeTemp = "25"
     monday.dayNightTemp = "17"
@@ -24,7 +24,7 @@ fun main() {
     monday.number = 100
 }
 
-class Weather {
+class NewClass {
     lateinit var dayTimeTemp: String
     lateinit var dayNightTemp: String
     lateinit var dayRain: String
