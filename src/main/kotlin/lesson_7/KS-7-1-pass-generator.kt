@@ -5,8 +5,8 @@ fun main() {
 
     for (i in 1..3) {
 
-        val char = ('a'..'z').random()
-        val number = (0..9).random()
+        val char = ('a'..'z').random().toString()
+        val number = (0..9).random().toString()
 
         passwordResult = passwordResult + number + char
     }
