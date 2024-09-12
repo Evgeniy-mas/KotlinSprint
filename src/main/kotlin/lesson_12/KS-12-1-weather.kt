@@ -7,7 +7,7 @@ fun main() {
     sunday.dayNightTemp = 14
     sunday.dayRain = "Без осадков"
 
-    sunday.getInfo()
+    sunday.printInfo()
 
     val monday = Weather()
 
@@ -15,7 +15,7 @@ fun main() {
     monday.dayNightTemp = 20
     monday.dayRain = "Дождь днем"
 
-    monday.getInfo()
+    monday.printInfo()
 }
 
 class Weather {
@@ -23,7 +23,7 @@ class Weather {
     var dayNightTemp = 10
     var dayRain = "Солнечная погода"
 
-    fun getInfo() {
+    fun printInfo() {
         println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp\nВозможность осадков: $dayRain")
     }
 }
