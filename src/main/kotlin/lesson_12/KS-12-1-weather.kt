@@ -3,36 +3,27 @@ package org.example.lesson_12
 fun main() {
     val sunday = Weather()
 
-    sunday.dayTimeTemp = "20"
-    sunday.dayNightTemp = "15"
-    sunday.dayRain = "Дождя нет"
+    sunday.dayTimeTemp = 18
+    sunday.dayNightTemp = 14
+    sunday.dayRain = "Без осадков"
 
     sunday.getInfo()
 
-    sunday.seeInSky = "Луна"
-    sunday.number = 55
-
     val monday = Weather()
 
-    monday.dayTimeTemp = "25"
-    monday.dayNightTemp = "17"
+    monday.dayTimeTemp = 25
+    monday.dayNightTemp = 20
     monday.dayRain = "Дождь днем"
 
     monday.getInfo()
-
-    monday.seeInSky = "Облако"
-    monday.number = 100
 }
 
 class Weather {
-    lateinit var dayTimeTemp: String
-    lateinit var dayNightTemp: String
-    lateinit var dayRain: String
-
-    var seeInSky = "Солнце"
-    var number = 45
+    var dayTimeTemp = 15
+    var dayNightTemp = 10
+    var dayRain = "Солнечная погода"
 
     fun getInfo() {
-        println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp\nПогода: $dayRain")
+        println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp\nВозможность осадков: $dayRain")
     }
 }
