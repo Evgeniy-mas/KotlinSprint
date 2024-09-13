@@ -1,13 +1,12 @@
 package org.example.lesson_7
 
 fun main() {
-    var password = ""
+    val number = (0..9)
+    val char = ('a'..'z')
 
     for (i in 0..2) {
-        val char = ('a'..'z').random()
-        val number = (0..9).random()
 
-        password = password + char + number
+        val password = char.random() + number.random().toString()
+        print(password)
     }
-    println(password)
 }
