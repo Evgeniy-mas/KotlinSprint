@@ -20,9 +20,9 @@ fun main() {
             println("Победила машина!")
         } else println("Ничья!")
 
-        println("Хотите бросить кости еще раз?")
+        println("Хотите бросить кости еще раз? Введите Да или Нет:")
 
-        val question = nextMove(readln())
+        val question = nextMove(readln().lowercase())
 
         if (!question) {
             break
