@@ -12,6 +12,7 @@ fun main() {
 
     if (userReplacement !in ingredients) {
         println("Такого ингредиента нет.")
+        return
     }
 
     println("Какой ингредиент вы хотите добавить?")
