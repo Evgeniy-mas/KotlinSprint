@@ -31,7 +31,7 @@ fun main() {
     println("Количество побед: $counter")
 }
 
-fun rollDice(): Int = (1..6).random()
+fun rollDiceNew(): Int = (1..6).random()
 
 fun nextMove(answer: String): Boolean = answer == "да"
 
