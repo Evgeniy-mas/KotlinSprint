@@ -11,13 +11,12 @@ fun main() {
     monday.printInfo()
 }
 
-class PrintWeather(val dayTimeTemp: Int, val dayNightTemp: Int, val dayRain: Boolean) {
+class PrintWeather(val dayTimeTemp: Int, val dayNightTemp: Int, val isDayRain: Boolean) {
 
     fun printInfo() {
-        println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp")
-
-        if (dayRain) {
-            println("Возможен дождь.")
-        } else println("Осадки не ожидаются.")
+        println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp\n" +
+                    "Наличие осадков:${if (isDayRain) "Да" else "Нет"}  "
+        )
     }
 }
+
