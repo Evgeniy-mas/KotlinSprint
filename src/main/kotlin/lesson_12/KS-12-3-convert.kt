@@ -11,11 +11,11 @@ fun main() {
 }
 
 class PrintInfo(_dayTimeTemp: Int, _dayNightTemp: Int, _isDayRain: Boolean) {
-    var dayTimeTemp = _dayTimeTemp.toDouble()
-        get() = field - 273.15
+    val dayTimeTemp = _dayTimeTemp.toDouble()
+        get() = field - TEMP_CONVERT_KELVIN
 
     val dayNightTemp = _dayNightTemp.toDouble()
-        get() = field - 273.15
+        get() = field - TEMP_CONVERT_KELVIN
 
     val isDayRain = _isDayRain
 
@@ -27,3 +27,4 @@ class PrintInfo(_dayTimeTemp: Int, _dayNightTemp: Int, _isDayRain: Boolean) {
         )
     }
 }
+const val TEMP_CONVERT_KELVIN = 273.15
