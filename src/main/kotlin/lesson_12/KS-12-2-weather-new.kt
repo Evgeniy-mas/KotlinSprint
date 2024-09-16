@@ -3,18 +3,18 @@ package org.example.lesson_12
 fun main() {
     val sunday = PrintWeather(18, 14, true)
 
-    sunday.forecastWeather()
+    sunday.showForecastWeather()
 
     val monday = PrintWeather(25, 20, false)
 
-    monday.forecastWeather()
+    monday.showForecastWeather()
 }
 
 class PrintWeather(val dayTimeTemp: Int, val dayNightTemp: Int, val isDayRain: Boolean) {
 
-    fun forecastWeather() {
+    fun showForecastWeather() {
         println("Температура днем: $dayTimeTemp\nТемпература ночью: $dayNightTemp\n" +
-                "Наличие осадков:${if (isDayRain) "Да" else "Нет"}  "
+                "Наличие осадков:${if (isDayRain) "Да" else "Нет"}"
         )
     }
 }
