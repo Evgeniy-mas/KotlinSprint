@@ -1,16 +1,16 @@
 package org.example.lesson_12
 
 fun main() {
-    val sunday = PrintInfo(289, 281, true)
+    val sunday = WeatherInfo(289, 281, true)
 
     sunday.printInfo()
 
-    val monday = PrintInfo(299, 291, false)
+    val monday = WeatherInfo(299, 291, false)
 
     monday.printInfo()
 }
 
-class PrintInfo(_dayTimeTemp: Int, _dayNightTemp: Int, _isDayRain: Boolean) {
+class WeatherInfo(_dayTimeTemp: Int, _dayNightTemp: Int, _isDayRain: Boolean) {
     val dayTimeTemp = _dayTimeTemp.toDouble()
         get() = field - TEMP_CONVERT_KELVIN
 
