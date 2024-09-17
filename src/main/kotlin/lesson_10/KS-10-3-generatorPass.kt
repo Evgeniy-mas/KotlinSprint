@@ -5,11 +5,11 @@ fun main() {
 
     val userChoice = readln().toInt()
 
-    val password = passwordGen(userChoice)
+    val password = generateRandomPassword(userChoice)
     println(password)
 }
 
-fun passwordGen(len: Int): String {
+fun generateRandomPassword(len: Int): String {
     val char = ("0123456789") + ("!@#$%^&*()+,-./ ")
 
     return (1..len)
