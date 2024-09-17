@@ -13,5 +13,6 @@ fun main() {
         number--
         quantity.add(userEnter)
     }
-    println(quantity.sorted().joinToString().capitalize())
+    val newList = quantity.toSet()
+    println(newList.sorted().joinToString().capitalize())
 }
