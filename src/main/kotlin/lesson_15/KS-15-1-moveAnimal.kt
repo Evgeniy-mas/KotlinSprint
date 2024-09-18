@@ -2,41 +2,58 @@ package org.example.lesson_15
 
 fun main() {
     val carp = Carp()
-    carp.moveCarp()
+    carp.swim()
+    println()
 
     val duck = Duck()
-    duck.moveDuck()
+    duck.walk()
+    duck.swim()
+    duck.fly()
+    println()
 
     val seagull = SeaGull()
-    seagull.moveSeaGull()
+    seagull.walk()
+    seagull.fly()
 }
 
-interface MovableFish {
-    fun moveCarp()
+interface MovableSwim {
+    fun swim()
 }
 
-interface MovableBird {
-    fun moveSeaGull()
+interface MovableFly {
+    fun fly()
 }
 
-interface MovableDuck {
-    fun moveDuck()
+interface MovableWalk {
+    fun walk()
 }
 
-class Carp : MovableFish {
-    override fun moveCarp() {
+class Carp : MovableSwim {
+    override fun swim() {
         println("Карась плавает под водой.")
     }
 }
 
-class Duck : MovableDuck {
-    override fun moveDuck() {
-        println("Утка летает и плавает по воде.")
+class Duck : MovableWalk,MovableSwim,MovableFly {
+    override fun walk() {
+        println("Утка умеет ходить.")
+    }
+
+    override fun swim() {
+        println("Утка умеет плавать.")
+    }
+
+    override fun fly() {
+        println("Утка летает.")
     }
 }
 
-class SeaGull : MovableBird {
-    override fun moveSeaGull() {
+class SeaGull : MovableWalk,MovableFly {
+    override fun walk() {
+        println("Чайка умеет ходить.")
+    }
+
+    override fun fly() {
         println("Чайка летает.")
     }
 }
