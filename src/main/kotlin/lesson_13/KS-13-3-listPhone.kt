@@ -8,12 +8,10 @@ fun main() {
         UserdataClass("Sergei", 84958787789, "Suzuki"),
         UserdataClass("Mag", 84556965478, null)
     )
-    list.forEach { it.printCompany() }
+    for (i in list.mapNotNull { it.company }) {
+        println(i)
+    }
 }
 
 class UserdataClass(val name: String, val number: Long, val company: String?) {
-
-    fun printCompany() {
-        println(company ?: "<Не указано>")
-    }
 }
