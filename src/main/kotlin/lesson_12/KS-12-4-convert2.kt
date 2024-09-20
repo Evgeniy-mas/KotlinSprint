@@ -7,15 +7,16 @@ fun main() {
 }
 
 class WeatherInfo2(_dayTimeTemp: Int, _dayNightTemp: Int, _isDayRain: Boolean) {
+
+    val dayTimeTemp = _dayTimeTemp.toDouble()
+        get() = field - TEMP_CONVERT_KELVIN2
+
+    val dayNightTemp = _dayNightTemp.toDouble()
+        get() = field - TEMP_CONVERT_KELVIN2
+
+    val isDayRain = _isDayRain
+
     init {
-        var dayTimeTemp = _dayTimeTemp.toDouble()
-        dayTimeTemp -= TEMP_CONVERT_KELVIN2
-
-        var dayNightTemp = _dayNightTemp.toDouble()
-        dayNightTemp -= TEMP_CONVERT_KELVIN2
-
-        val isDayRain = _isDayRain
-
         println(
             "Температура днем: ${String.format("%.0f", dayTimeTemp)}\n" +
                     "Температура ночью: ${String.format("%.0f", dayNightTemp)}\n" +
