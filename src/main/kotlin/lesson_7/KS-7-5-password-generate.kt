@@ -9,12 +9,25 @@ fun main() {
         userChoice = MIN_PASSWORD
     }
 
-    val char = (0..9) + ('a'..'z') + ('A'..'Z')
+    val listNumber = mutableListOf<String>()
 
-    for (i in 1..userChoice) {
-        val password = char.random().toString()
-        print(password)
+    val char = ('a'..'z')
+    val char2 = ('A'..'Z')
+    val number = ('0'..'9')
+
+    listNumber.add(char2.random().toString())
+    listNumber.add(char.random().toString())
+    listNumber.add(number.random().toString())
+
+    val allChar = char + char2 + number
+
+    var password = ""
+    for (i in 1..userChoice - 3) {
+        password = password + allChar.random().toString()
     }
+
+    val result = listNumber + password
+    println(result.shuffled().joinToString(""))
 }
 
 const val MIN_PASSWORD = 6
