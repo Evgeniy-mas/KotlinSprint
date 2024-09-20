@@ -7,7 +7,7 @@ fun main() {
     println("Введитие ваш пароль:")
     val password = readln().toInt()
 
-    val check: String? = verification(login, password)
+    val check: String? = passVerification(login, password)
 
     if (check == null) {
         println("Авторизация не удалась!")
@@ -17,7 +17,7 @@ fun main() {
     }
 }
 
-fun verification(log: String, pass: Int): String? {
+fun passVerification(log: String, pass: Int): String? {
     val char = (0..9) + ('a'..'z') + ('A'..'Z')
     var accessToken: String? = ""
 
@@ -34,13 +34,8 @@ fun verification(log: String, pass: Int): String? {
 
 fun getBasket(token: String): String {
     val tokenSignature = 32
-    var products = ""
-    products = if (token.length == tokenSignature) {      //Иммитация проверки валидности токена
-        BASKET
-    } else
-        "Ошибка #401"
 
-    return products
+    return if (token.length == tokenSignature) BASKET else "Ошибка #401"
 }
 
 const val LOGIN = "user"
