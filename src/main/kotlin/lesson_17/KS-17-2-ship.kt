@@ -8,7 +8,7 @@ fun main() {
 class Ship(_name: String, val speed: Int, val port: String) {
     var name = _name
         set(value) {
-            if (value !== "Виктория")
+            if (value !== field)
                 println("Вы не можете поменять имя корабля!")
         }
 }
