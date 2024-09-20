@@ -7,7 +7,7 @@ fun main() {
 }
 
 class GameCube {
-    private val number = 5
+    private val number = (1..6).random()
 
     fun getNumberCube() = number
 }
