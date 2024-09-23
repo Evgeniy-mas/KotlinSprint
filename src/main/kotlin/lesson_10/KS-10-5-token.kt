@@ -1,5 +1,7 @@
 package org.example.lesson_10
 
+import kotlin.system.exitProcess
+
 fun main() {
     println("Введите ваш логин:")
     val login = readln().lowercase()
@@ -35,7 +37,7 @@ fun passVerification(log: String, pass: Int): String? {
 fun getBasket(token: String): String {
     val tokenSignature = 32
 
-    return if (token.length == tokenSignature) BASKET else "Ошибка #401"
+    return if (token.length == tokenSignature) BASKET else exitProcess(1)
 }
 
 const val LOGIN = "user"
