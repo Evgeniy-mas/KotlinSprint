@@ -5,20 +5,23 @@ fun main() {
 
     var userChoice = readln().toInt()
 
-    var ingredients = arrayOf<String>()
-
-    println("Введите ингредиент:")
+    val ingredients = arrayOfNulls<String>(userChoice)
 
     while (userChoice > 0) {
+        for (i in ingredients.indices) {
+            println("Введите ингредиент:")
 
-        val addIngredients = readln()
-        ingredients += addIngredients
+            val addIngredients = readln()
+
+            ingredients[i] = addIngredients
+
+            userChoice--
+        }
 
         userChoice--
         if (userChoice == 0) {
             break
         }
-        println("Введите следующий ингредиент:")
     }
     println(ingredients.joinToString(","))
 }
