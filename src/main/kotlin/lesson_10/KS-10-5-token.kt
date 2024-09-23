@@ -9,7 +9,7 @@ fun main() {
     println("Введитие ваш пароль:")
     val password = readln().toInt()
 
-    val check: String? = passVerification(login, password)
+    val check: String? = verifyUser(login, password)
 
     if (check == null) {
         println("Авторизация не удалась!")
@@ -19,7 +19,7 @@ fun main() {
     }
 }
 
-fun passVerification(log: String, pass: Int): String? {
+fun verifyUser(log: String, pass: Int): String? {
     val char = (0..9) + ('a'..'z') + ('A'..'Z')
     var accessToken: String? = ""
 
