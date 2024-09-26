@@ -1,17 +1,16 @@
 package org.example.lesson_16
 
 fun main() {
-    val user = UserData()
+    val user = UserData("Evgeniy", 1234)
 
-    println(checkData(user.sendData()))
+    println("Введите ваш пароль:")
+    val enterPassword = readln().toInt()
+
+    val result = user.checkPassword(enterPassword)
+    println(result)
 }
 
-fun checkData(data:String):Boolean = data == "Evgeniy1234"
+class UserData(val login: String, private val password: Int) {
 
-class UserData {
-
-    private var login = "Evgeniy"
-    private var password = "1234"
-
-    fun sendData():String = login + password
+    fun checkPassword(pass: Int): Boolean = pass == password
 }
