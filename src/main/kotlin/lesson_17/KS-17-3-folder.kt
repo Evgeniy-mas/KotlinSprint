@@ -6,9 +6,11 @@ fun main() {
     println(file.name)
 }
 
-class Folder(_name: String, val quantity: Int, val isSecret: Boolean) {
-
+class Folder(_name: String, _quantity: Int, val isSecret: Boolean) {
+    
     var name = _name
-        get() = if (isSecret) "Скрытая папка, количестов файлов - 0"
-        else ("$field, количестово файлов - $quantity")
+        get() = if (isSecret) "Скрытая папка, количестоа файлов - 0" else field
+
+    val quantity = _quantity
+        get() = if (isSecret) 0 else field
 }
