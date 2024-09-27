@@ -20,7 +20,7 @@ class Package(val numberPackage: Int, _location: String) {
         set(value) {
             if (value !== field) {
                 counter++
+                field = value
             }
-            field = value
         }
 }
