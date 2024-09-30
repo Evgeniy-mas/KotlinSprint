@@ -9,14 +9,16 @@ fun main() {
     println("Введитие ваш пароль:")
     val password = readln().toInt()
 
+    val tokenSignature = 32
+
     val check: String? = verifyUser(login, password)
 
     if (check == null) {
         println("Авторизация не удалась!")
-    } else {
+    } else if (check.length == tokenSignature) {
         val product = getBasket(check)
         println(product)
-    }
+    } else exitProcess(1)
 }
 
 fun verifyUser(log: String, pass: Int): String? {
@@ -34,11 +36,7 @@ fun verifyUser(log: String, pass: Int): String? {
     return verification
 }
 
-fun getBasket(token: String): String {
-    val tokenSignature = 32
-
-    return if (token.length == tokenSignature) BASKET else exitProcess(1)
-}
+fun getBasket(token: String): String = BASKET
 
 const val LOGIN = "user"
 const val PASSWORD = 1234
