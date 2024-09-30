@@ -8,12 +8,5 @@ fun main() {
 
 fun List<Int>.evenNumbersSum() {
 
-    var count = 0
-
-    forEach { i ->
-        if (i % 2 == 0) {
-            count += i
-        }
-    }
-    println(count)
+    println(this.filter { it % 2 == 0 }.sum())
 }
