@@ -5,25 +5,29 @@ fun main() {
     val dog = Dog("Max")
     val cat = Cat("Kelly")
 
-    val animals: List<Fox> = listOf(fox, dog, cat)
+    val animals: List<Animal> = listOf(fox, dog, cat)
     animals.forEach { it.getFood() }
 }
 
-open class Fox(val name: String) {
+abstract class Animal(val name: String) {
+    abstract fun getFood()
+}
 
-    open fun getFood() {
+class Fox(name: String) : Animal(name) {
+
+    override fun getFood() {
         println("$name ест ягоды.")
     }
 }
 
-class Dog(name: String) : Fox(name) {
+class Dog(name: String) : Animal(name) {
 
     override fun getFood() {
         println("$name грызет кости.")
     }
 }
 
-class Cat(name: String) : Fox(name) {
+class Cat(name: String) : Animal(name) {
 
     override fun getFood() {
         println("$name ест рыбу.")
