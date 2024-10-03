@@ -16,14 +16,13 @@ class User5(_login: String, _password: String) {
             if (value !== field) {
                 println("Вы не можете изменить пароль!")
             }
-            field = password
         }
 
     var login = _login
         set(value) {
             if (value !== field) {
                 println("Логин успешно изменен!")
+                field = value
             }
-            field = value
         }
 }
