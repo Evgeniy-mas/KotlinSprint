@@ -1,69 +1,44 @@
 package org.example.lesson_11
 
-
 fun main() {
-    val evgeniy = RoomMovie(
-        "обложка",
-        "киноманы",
-        mutableListOf("Sasha", "Neit"),
-        "Evgeniy",
-    )
-    val mike = RoomMusic(
-        "обложка",
-        "меломаны",
-        mutableListOf("Музыкант, Masha"),
-        "Mike",
-        "микрофон выключен"
-    )
+    val participant = Participant("Evgeniy", STATUS, "фото")
 
-    evgeniy.addUser()
-    evgeniy.printInfoUser()
-    evgeniy.changeStatus()
+    val room = Rooms("постер", "киноманы")
 
-    println()
-
-    mike.addUser()
-    mike.printInfoUser()
-    mike.changeStatus2()
+    room.addParticipant(participant, room.participantList)
+    participant.changeStatus(STATUS3)
+    room.avatarClicking(participant)
 }
 
-open class RoomMovie(
-    val cover: String,
-    val title: String,
-    val party: List<String>,
-    val avatarUser: String,
-    var status: String = "разговаривает"
+class Participant(
+    val nikName: String,
+    var status: String,
+    val avatar: String,
 ) {
-    val status2 = "Микрофон выключен."
-    val status3 = "Пользователь заглушен."
+    fun changeStatus(stat: String) {
 
-    fun addUser() {
-        println("Участник $avatarUser добавлен в комнату $title.")
-    }
-
-    fun changeStatus() {
-
-        println("Учстник комнаты $avatarUser изменил статус $status на: $status2 ")
-    }
-
-    fun changeStatus2() {
-
-        println("Учстник комнаты $avatarUser изменил статус $status на: $status3  ")
-    }
-
-    fun printInfoUser() {
-        println(
-            "Участник c ником $avatarUser в комнате $title($cover)," +
-                    "людей в комнтате $party статус: $status "
-        )
+        println("Пользователь $nikName, сменил статус $status на $stat.")
+        status = stat
     }
 }
 
-class RoomMusic(
-    cover: String,
-    title: String,
-    party: List<String>,
-    avatarUser: String,
-    status: String
-) : RoomMovie(cover, title, party, avatarUser, status) {
+class Rooms(
+    val cover: String,
+    val nameRoom: String,
+    val participantList: MutableList<Participant> = mutableListOf()
+) {
+
+    fun addParticipant(participant: Participant, list: MutableList<Participant>) {
+        list.add(participant)
+        println("Участник ${participant.nikName}, добавлен в комнату $nameRoom, обложка: $cover. ")
+    }
+
+    fun avatarClicking(participant: Participant) {
+        println("Участник ${participant.nikName}, аватарка ${participant.avatar}, статус: ${participant.status}.")
+
+    }
 }
+
+const val STATUS = "разговаривает"
+const val STATUS2 = "пользователь заглушен"
+const val STATUS3 = "микрофон выключен"
