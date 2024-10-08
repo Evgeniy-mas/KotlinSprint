@@ -1,25 +1,22 @@
 package org.example.lesson_20
 
 fun main() {
-    var listWord = listOf("Привет", "Я робот", "Команды", "Поиск", "Деактивация")
+    val robotWord = Robot(listOf("Привет", "Я робот", "Команды", "Поиск", "Деактивация"))
 
     val lambda = { list: List<String> -> list.random().reversed() }
 
-    say(listWord)
-
-    val modify = setModifier(listWord, lambda)
-    listWord = modify
-
-    say(listWord)
+    robotWord.say()
+    robotWord.setModifier(lambda)
+    robotWord.say()
 }
 
-fun setModifier(list: List<String>, modify: (List<String>) -> String): List<String> {
-    val newList = modify(list)
+class Robot(private var word: List<String>) {
 
-    return listOf(newList)
-}
+    fun setModifier(modify: (List<String>) -> String) {
+        word = listOf(modify(word))
+    }
 
-fun say(list: List<String>) {
-
-    println(list.random())
+    fun say() {
+        println(word.random())
+    }
 }
