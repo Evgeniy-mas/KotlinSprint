@@ -3,37 +3,39 @@ package org.example.lesson_16
 import kotlin.system.exitProcess
 
 fun main() {
-    val gamer = Gamer5("Nick", 180, 25)
+    val gamer = Gamer5("Nick", 100, 25)
 
-    gamer.damage(30)
-    gamer.damage(40)
-    gamer.damage(50)
-    gamer.damage(30)
-    gamer.damage(40)
-    gamer.damage(50)
-    gamer.damage(30)
+    gamer.damage(20)
+    gamer.damage(15)
+    gamer.damage(25)
+    gamer.healing()
+    gamer.damage(20)
+    gamer.damage(15)
+    gamer.healing()
+    gamer.damage(45)
 }
 
-class Gamer5(val name: String, var health: Int, var powerHit: Int) {
+class Gamer5(val name: String, private var health: Int, private var powerHit: Int) {
 
     fun damage(damage: Int) {
         health -= damage
-
-        if (health <= 0) {
-            health = 0
-            powerHit = 0
-            println("Игрок $name умер, здоровье - $health, сила удара - $powerHit ")
-            exitProcess(0)
-
-        } else if (health < HEALTH_HEALING) {
-            healing()
+        println("Игрок $name получил урон $damage, осталось здоровья $health")
+        if (health == 0) {
+            gamerDie()
         }
-        println("Здоровье игрока $health")
     }
 
-    private fun healing() {
+    fun healing() {
+        if (health <= HEALTH_HEALING) {
+            health += 20
+        }
+        else println("Невозможно использовать.")
+    }
 
-        health += 20
+    private fun gamerDie() {
+        powerHit = 0
+        println("Игрок умер, здоровье $health, сила удара $powerHit")
+        exitProcess(0)
     }
 }
 
