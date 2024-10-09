@@ -1,27 +1,32 @@
 package org.example.lesson_15
 
 fun main() {
-    val guitar = Instrument("Гитара", 70)
-    val piano = Instrument("Пианино", 15)
+    val guitar = Instrument("Инструменты", "Гитара", 70)
+    val piano = Instrument("Инструменты", "Пианино", 15)
 
-    val accessory = Accessories("Струны", 30)
-    val accessory2 = Accessories("Клавиши", 100)
+    val accessory = Accessories("Комплектующие", "Струны", 30)
+    val accessory2 = Accessories("Комплектующие", "Клавиши", 100)
 
     guitar.searchAccessory()
     accessory.showAccessory()
+    println()
 
     piano.searchAccessory()
     accessory2.showAccessory()
 }
 
-class Instrument(val title: String, val quantity: Int) : SearchAccessory {
+open class MusicStore(val category: String, val title: String, val quantity: Int)
+
+class Instrument(category: String, title: String, quantity: Int) : MusicStore(category, title, quantity),
+    SearchAccessory {
 
     override fun searchAccessory() {
+        println("Категория: $category")
         println("Выполняется поиск комплектующих для $title...")
     }
 }
 
-class Accessories(val title: String, val quantity: Int) {
+class Accessories(category: String, title: String, quantity: Int) : MusicStore(category, title, quantity) {
 
     fun showAccessory() {
         println("Найдены комплектующие $title, количество $quantity")
