@@ -1,33 +1,33 @@
 package org.example.lesson_19
 
 fun main() {
-    val tank34 = Tank("Т-34", null)
-    tank34.loadingMissile(Ammunition.BLUE.id)
+    val tank34 = Tank("Т-34")
+    tank34.loadingMissile(Ammunition.BLUE)
     tank34.tankShot()
 
-    val tank62 = Tank("T-62", null)
-    tank62.loadingMissile(Ammunition.GREEN.id)
+    val tank62 = Tank("T-62")
+    tank62.loadingMissile(Ammunition.GREEN)
     tank62.tankShot()
 
-    val tank90 = Tank("Т-90", null)
-    tank90.loadingMissile(Ammunition.RED.id)
+    val tank90 = Tank("Т-90")
+    tank90.loadingMissile(Ammunition.RED)
     tank90.tankShot()
 
-    val tankTiger = Tank("Тигр", null)
+    val tankTiger = Tank("Тигр")
     tankTiger.tankShot()
 }
 
-class Tank(private val title: String, private var missile: Int?) {
+class Tank(private val title: String, private var missile: Ammunition? = null) {
 
-    fun loadingMissile(id: Int) {
-        missile = id
+    fun loadingMissile(bullet: Ammunition) {
+        missile = bullet
     }
 
     fun tankShot() {
         if (missile == null) {
-            println("Танк не заряжен.")
+            println("Танк не заряжен!")
         } else {
-            println("Танк $title произвел выстрел, нанесенный урон $missile.")
+            println("Танк $title произвел выстрел, нанесенный урон ${missile?.id}.")
         }
     }
 }
