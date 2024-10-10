@@ -1,7 +1,5 @@
 package org.example.lesson_16
 
-import kotlin.system.exitProcess
-
 fun main() {
     val gamer = Gamer5("Nick", 100, 25)
 
@@ -35,7 +33,6 @@ class Gamer5(val name: String, private var health: Int, private var powerHit: In
     private fun gamerDie() {
         powerHit = 0
         println("Игрок умер, здоровье $health, сила удара $powerHit")
-        exitProcess(0)
     }
 }
 
