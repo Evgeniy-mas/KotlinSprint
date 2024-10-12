@@ -10,15 +10,26 @@ fun main() {
     gamer.damage(20)
     gamer.damage(15)
     gamer.healing()
-    gamer.damage(45)
+    gamer.damage(47)
+    gamer.damage(50)
 }
 
-class Gamer5(val name: String, private var health: Int, private var powerHit: Int) {
+class Gamer5(
+    val name: String,
+    private var health: Int,
+    private var powerHit: Int,
+    private var isAlive: Boolean = true
+) {
 
     fun damage(damage: Int) {
+        if (!isAlive) {
+            println("Игрок умер, нельзя нанести урон!")
+            return
+        }
+
         health -= damage
-        println("Игрок $name получил урон $damage, осталось здоровья $health")
-        if (health == 0) {
+        println("Игрок $name получил урон $damage")
+        if (health <= 0) {
             gamerDie()
         }
     }
@@ -26,12 +37,13 @@ class Gamer5(val name: String, private var health: Int, private var powerHit: In
     fun healing() {
         if (health <= HEALTH_HEALING) {
             health += 20
-        }
-        else println("Невозможно использовать.")
+        } else println("Невозможно использовать.")
     }
 
     private fun gamerDie() {
+        isAlive = false
         powerHit = 0
+        health = 0
         println("Игрок умер, здоровье $health, сила удара $powerHit")
     }
 }
