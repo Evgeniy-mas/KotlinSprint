@@ -1,7 +1,7 @@
 package org.example.lesson_16
 
 fun main() {
-    val gamer = Gamer5("Nick", 100, 25)
+    val gamer = newGamer5("Nick", 100, 25)
 
     gamer.damage(20)
     gamer.damage(15)
@@ -14,7 +14,7 @@ fun main() {
     gamer.damage(50)
 }
 
-class Gamer5(
+class newGamer5(
     val name: String,
     private var health: Int,
     private var powerHit: Int,
