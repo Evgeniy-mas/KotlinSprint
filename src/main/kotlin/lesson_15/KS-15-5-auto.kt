@@ -22,14 +22,14 @@ fun main() {
     mazda.unloadingPassenger()
 }
 
-abstract class Cars(val title: String, val passengers: Int) : DriveCar, TransportationPassenger {
+abstract class Cars(val title: String, val passengers: Int) : DriveCar  {
 
     fun stopAuto() {
         println("Автомобиль прибыл по адресу.")
     }
 }
 
-class PassengerCar(title: String, passengers: Int) : Cars(title, passengers) {
+class PassengerCar(title: String, passengers: Int) : Cars(title, passengers),TransportationPassenger {
 
     override fun loadPassenger() {
         if (passengers > 3) {
@@ -45,7 +45,8 @@ class PassengerCar(title: String, passengers: Int) : Cars(title, passengers) {
     }
 }
 
-class TruckCar(title: String, passengers: Int, private val cargo: Int) : Cars(title, passengers), TransportationCargo {
+class TruckCar(title: String, passengers: Int, private val cargo: Int):
+    Cars(title, passengers), TransportationCargo,TransportationPassenger {
 
     override fun loadPassenger() {
         if (passengers > 1) {
