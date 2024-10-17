@@ -9,6 +9,7 @@ fun main() {
     circle.draw(3, 5, circle)
     square.draw(5, 12f, square)
     point.draw(7.7f, 12, point)
+    point.draw(2.4f, 6.6f, point)
 }
 
 class Circle3(title: String, val radius: Int) : Screen(title)
@@ -28,6 +29,10 @@ open class Screen(private val title: String) {
     }
 
     fun draw(x: Float, y: Int, figure: Screen) {
+        println("Рисуем ${figure.title} по координатам - $x и $y")
+    }
+
+    fun draw(x: Float, y: Float, figure: Screen) {
         println("Рисуем ${figure.title} по координатам - $x и $y")
     }
 }
