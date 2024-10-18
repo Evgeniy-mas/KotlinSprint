@@ -2,25 +2,28 @@ package org.example.lesson_19
 
 fun main() {
     val card = mutableListOf<Person3>()
-
     repeat(5) {
         println("Введите имя:")
         val name = readln().capitalize()
 
-        println("Введите пол (М) или (Ж) ")
-        val enterGender = readln().lowercase()
-
-
-        val choiceGender = when (enterGender) {
-            "м" -> Gender.MAN.id
-            "ж" -> Gender.WOMEN.id
-            else -> {
-                "Неправильно введен пол!"
+        var enterGender: String
+        while (true) {
+            println("Введите пол (М) или (Ж) ")
+            enterGender = readln().lowercase()
+            if (enterGender == "м" || enterGender == "ж") {
+                break
+            } else {
+                println("Не правильно введен пол!")
             }
         }
-        card.add(Person3(name, choiceGender))
-    }
 
+        enterGender = if (enterGender == "м") {
+            Gender.MAN.id
+        } else Gender.WOMEN.id
+
+        card.add(Person3(name, enterGender))
+
+    }
     card.forEach { println("имя: ${it.name}\nпол: ${it.gender}") }
 }
 
